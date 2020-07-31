@@ -23,3 +23,21 @@
 1. 利用 for 迴圈讀取資料夾內的檔案(os)
 2. 讓數據相關性可視化(heatmap)
 3. LSTM、RNN 模型的基本架構
+
+
+7月
+-------
+用 lstm+pytorch 做 IMDB 電影評論(原本是要用 rnn ，但網路上的 lstm+pytorch 寫比較詳細))。
+
+是跟著以下網址做的:
+https://zhuanlan.zhihu.com/p/140075236?fbclid=IwAR2ph8ex0XtLpdm229eu5TjbgbjzikHNgAUFjTVSJRciBR4FLCfGNQxIIAg
+下載數據集:
+kaggle:https://www.kaggle.com/mnk812/movie-comment/data?select=wiki_word2vec_50.bin
+
+學到的一些
+-------
+
+
+1. 發現 python 可以用來解壓縮，所以可以把整個 IMDB 數據集的訓練直接用成一個模型，這樣方便調整路徑位置。
+2. 成功繁體轉換無誤。
+3. 發現理解一些概念真的需要熟悉並加強 class 的概念，所以就練習了class。寫個簡單的小互動遊戲當作練習，放在 practice文件中。

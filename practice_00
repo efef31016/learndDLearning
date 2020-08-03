@@ -24,15 +24,6 @@ class VISITWHO():
 		print("hello~ "+self.name)
 	def farmer(self, income, pay):
 		sdd1 = 100
-		if not self.relation == "friend":
-			if income < sdd1:
-				print("keep going!")
-			else:
-				print("welcome!")
-			if pay >= sdd1:	# 印出"--. --- --- -..   -... --- -.--"
-				print("--. --- --- -..   -... --- -.--")
-			else:
-				print("get out!")
 		if self.relation == "friend":
 			print("my friend!come in!")
 		if self.relation == "mistress":
@@ -53,7 +44,7 @@ class VISITWHO():
 			name = input("your name?:")
 			gender = input("your gender?:")
 			relation = input("what is our relation?:")
-			if name == "ivy":
+			if isinstance(name, str) == True:
 				new = VISITWHO(name,gender,relation)
 				print("I got the new member.")
 			else:
@@ -63,9 +54,9 @@ class VISITWHO():
 				        x = int(input("which year is normal year?"))
 				    except:
 				        break
-
 				    if x % 4 == 0 and x % 100 != 0 or x % 400 == 0:
 				        print("you are smart")
+				        sys.exit()
 				    else:
 				        print("you can't go")
 
@@ -73,5 +64,5 @@ class VISITWHO():
 # 性別可以填: male female
 # 關係可以填: friend mistress enemy no
 
-# I = VISITWHO("名字","性別","關係")
-# I.farmer(收入,付的錢)
+#J = VISITWHO("i123","female","mistress")
+#J.farmer(100,1)

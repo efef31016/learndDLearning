@@ -23,6 +23,46 @@ class VISITWHO():
 		self.relation = relation
 		print("hello~ "+self.name)
 	def farmer(self, income, pay):
+		if pay >= income/2:
+			print("alright")
+		else:
+			print("let's play a game~")
+			def ari_seq(a,b):   # a是list(分別為4個等差數列的數字),b為公差
+				k = a[3]+b
+				if 0 < k <= 105:
+					for i in a:
+						print(i,end=" ")
+					print(k)
+				else:
+					print("第五項要小於105喔~")
+
+			def geo_seq(a,b):   # a是list(分別為4個等比數列的數字),b為公比
+				l = int(a[3]*b)
+				if 0 < l <= 105:
+					for i in a:
+						print(i,end=" ")
+					print(l)
+				else:
+					print("第五項要小於105喔~")
+
+			a = int(input("要幾次機會? "))
+			t=0
+			while t<a:
+				b = list(map(int,input("給四個正整數吧(等差或等比): ").split(" ")))
+				if 1 <= a <= 20:
+					c=[]
+					d=[]
+					for i in range(3):
+						c.append(b[i+1] - b[i])
+						d.append(b[i+1]/b[i])
+					if c[0]==c[1]==c[2]:
+						ari_seq(b,c[0])
+					elif d[0]==d[1]==d[2]:
+						geo_seq(b,d[0])
+					else:
+						print("滾吧!連等差等比都不會!")
+				t += 1
+
 		sdd1 = 100
 		if self.relation == "friend":
 			print("my friend!come in!")
@@ -59,6 +99,7 @@ class VISITWHO():
 				        sys.exit()
 				    else:
 				        print("you can't go")
+
 
 # 規則
 # 性別可以填: male female

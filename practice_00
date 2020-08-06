@@ -1,6 +1,24 @@
 import sys
 import time
 
+def ari_seq(a,b):   # a是list(分別為4個等差數列的數字),b為公差
+	k = a[len(a)-1]+b
+	if 0 < k <= 105:
+		for i in a:
+			print(i,end=" ")
+		print(k)
+	else:
+		print("第五項要小於105喔~")
+
+def geo_seq(a,b):   # a是list(分別為4個等比數列的數字),b為公比
+	l = int(a[len(a)-1]*b)
+	if 0 < l <= 105:
+		for i in a:
+			print(i,end=" ")
+		print(l)
+	else:
+		print("第五項要小於105喔~")
+
 def enemy():
 	theday = input("which year:")
 	myday = int(theday)
@@ -25,44 +43,45 @@ class VISITWHO():
 	def farmer(self, income, pay):
 		if pay >= income/2:
 			print("alright")
-		else:
-			print("let's play a game~")
-			def ari_seq(a,b):   # a是list(分別為4個等差數列的數字),b為公差
-				k = a[3]+b
-				if 0 < k <= 105:
-					for i in a:
-						print(i,end=" ")
-					print(k)
-				else:
-					print("第五項要小於105喔~")
+			print("你必須答對三次(給我等比或等差數列): "))
+			x = []
+			y = []
+			s = 0
+			while s < 3:
+				b = list(map(int,input().split(" ")))
+				# print(b)
 
-			def geo_seq(a,b):   # a是list(分別為4個等比數列的數字),b為公比
-				l = int(a[3]*b)
-				if 0 < l <= 105:
-					for i in a:
-						print(i,end=" ")
-					print(l)
-				else:
-					print("第五項要小於105喔~")
-
-			a = int(input("要幾次機會? "))
-			t=0
-			while t<a:
-				b = list(map(int,input("給四個正整數吧(等差或等比): ").split(" ")))
-				if 1 <= a <= 20:
-					c=[]
-					d=[]
-					for i in range(3):
-						c.append(b[i+1] - b[i])
-						d.append(b[i+1]/b[i])
-					if c[0]==c[1]==c[2]:
-						ari_seq(b,c[0])
-					elif d[0]==d[1]==d[2]:
-						geo_seq(b,d[0])
+				for i in range(len(b)-1):
+					c = b[i+1]-b[i]
+					x.append(c)
+					d = b[i+1]/b[i]
+					y.append(d)
+				# print(x,y)
+				#print(x,y)
+				e = 0  # 不是等差也不是等比, e = 1 是等差, e = 2是等比
+				for i in x:
+					# print(i+1000000)
+					if x[0] == i:
+						e = 1
 					else:
-						print("滾吧!連等差等比都不會!")
-				t += 1
-
+						for i in y:
+							# print(i+2000000)
+							if y[0] == i:
+								e = 2
+							else:
+								break
+				if e == 1:
+					ari_seq(b,c)
+				elif e == 2:
+					geo_seq(b,d)
+				else:
+					break
+				x=[]
+				y=[]
+				s += 1
+		else:
+			print("okey~")
+			
 		sdd1 = 100
 		if self.relation == "friend":
 			print("my friend!come in!")

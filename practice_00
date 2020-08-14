@@ -48,6 +48,7 @@ class VISITWHO():
 		if pay >= income/2:
 			print("alright")
 			print("你必須答對三次(給我等比或等差數列，每個數字不能超過105): ")
+			#公差公比
 			x = []
 			y = []
 			s = 0
@@ -84,7 +85,8 @@ class VISITWHO():
 				x=[]
 				y=[]
 				s += 1
-
+				
+#公差公比
 		else:
 			print("you are ")
 			
@@ -101,6 +103,37 @@ class VISITWHO():
 				time.sleep(1)
 				sys.exit()
 			else:
+				print("come on !Prime factorization!")
+				a = int(input())
+				l = []
+				i = 2
+
+				while i <= int(a**(1/2)):   # 數學定理
+					if a%i==0:
+						if (a//i)%i==0:   # 需要開次方
+							times=0
+							while a%i==0:
+								a//=i
+								times+=1
+							c="%d^%d"%(i,times)
+							l.append(c)
+						else:
+							a//=i
+							l.append(i)
+						i+=1
+					else:
+						i+=1
+				if a!=1:
+					l.append(a)
+				else:
+					pass
+				print("do you believe me?")
+				bel = input("yes or no? ")
+				if bel == "yes":
+					print(*l,sep=" * ")
+				elif bel == "no":
+					print("you can't know the answer!")
+				time.sleep(3)
 				print("fine.come in, my customer.")
 		if self.relation == "enemy":
 			enemy()

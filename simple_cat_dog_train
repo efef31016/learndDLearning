@@ -1,15 +1,1 @@
-#follow https://medium.com/jimmyfu87/cnn%E5%AF%A6%E4%BD%9Ckaggle%E8%B2%93%E7%8B%97%E5%BD%B1%E5%83%8F%E8%BE%A8%E8%AD%98-pytorch-26380b357a3d
-調整參數並觀察結果
-___
 
-環境:
-virtualenv
-python3.8
-torch.cuda.is_available == False( so i just do simple test)
-
-儲存第一個 model，訓練結果非常不樂觀，想必是硬體太差。
-_______
-以下是訓練第一變與第十變的結果(每一遍的 epoch 為 6)
-
-![image](https://github.com/efef31016/learndDLearning/blob/master/0.png)
-![image](https://github.com/efef31016/learndDLearning/blob/master/9.png)

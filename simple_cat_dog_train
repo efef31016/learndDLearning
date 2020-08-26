@@ -10,3 +10,5 @@ torch.cuda.is_available == False( so i just do simple test)
 儲存第一個 model，訓練結果非常不樂觀，想必是硬體太差。
 _______
 以下是訓練第一變與第十變的結果(每一遍的 epoch 為 6)
+![image](https://github.com/efef31016/learndDLearning/blob/master/0.png?raw=true)
+![image](https://github.com/efef31016/learndDLearning/blob/master/9.png?raw=true)

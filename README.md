@@ -41,3 +41,24 @@ kaggle:https://www.kaggle.com/mnk812/movie-comment/data?select=wiki_word2vec_50.
 1. 發現 python 可以用來解壓縮，所以可以把整個 IMDB 數據集的訓練直接用成一個模型，這樣方便調整路徑位置。
 2. 成功繁體轉換無誤。
 3. 發現理解一些概念真的需要熟悉並加強 class 的概念，所以就練習了class。寫個簡單的小互動遊戲當作練習，放在 practice文件中。
+
+8月
+-------
+
+跟著以下網址跑貓狗辨別:
+https://medium.com/jimmyfu87/cnn實作kaggle貓狗影像辨識-pytorch-26380b357a3d
+
+調整參數並觀察結果
+-------
+
+環境:
+virtualenv
+python3.8
+torch.cuda.is_available == False( so i just do simple test)
+
+儲存第一個 model，訓練結果非常不樂觀，想必是硬體太差。
+
+以下是訓練第一變與第十變的結果(每一遍的 epoch 為 6)
+
+![image] (https://github.com/efef31016/learndDLearning/blob/master/0.png)
+![image] (https://github.com/efef31016/learndDLearning/blob/master/9.png)

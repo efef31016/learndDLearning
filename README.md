@@ -44,21 +44,23 @@ kaggle:https://www.kaggle.com/mnk812/movie-comment/data?select=wiki_word2vec_50.
 
 8月
 -------
+環境:
+virtualenv
+python3.8
+torch.cuda.is_available == False( so i just do simple test)
 
 跟著以下網址跑貓狗辨別:
 https://medium.com/jimmyfu87/cnn實作kaggle貓狗影像辨識-pytorch-26380b357a3d
 
 調整參數並觀察結果
 -------
-
-環境:
-virtualenv
-python3.8
-torch.cuda.is_available == False( so i just do simple test)
-
+首先在簡單實做並測試(只有比較的跑的次數不同後的結果)
 儲存第一個 model，訓練結果非常不樂觀，想必是硬體太差。
 
 以下是訓練第一變與第十變的結果(每一遍的 epoch 為 6)
 
-![image] (https://github.com/efef31016/learndDLearning/blob/master/0.png)
-![image] (https://github.com/efef31016/learndDLearning/blob/master/9.png)
+![image]https://github.com/efef31016/learndDLearning/blob/master/0.png
+![image]https://github.com/efef31016/learndDLearning/blob/master/9.png
+
+我取的資料集分常單純，與 https://reurl.cc/j5qzL2 一樣，所以覺得先不用在這一次
+做真正的"改變參數"的動作，但是有一點值得觀察的是，跑到第四次出現了的非常巨大改變。

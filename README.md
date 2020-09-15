@@ -1,4 +1,5 @@
-# learndDLearning
+# !練習!內文無數學!心得整理!
+# Movie_comment(datasets from keras)  cat_dog_classification with Pytorch(datasets from Kaggle)
 
 心得
 -------
@@ -50,7 +51,7 @@ python3.8
 torch.cuda.is_available == False( so i just do simple test)
 
 跟著以下網址跑貓狗辨別:
-https://medium.com/jimmyfu87/cnn實作kaggle貓狗影像辨識-pytorch-26380b357a3d
+https://reurl.cc/A8yraY
 
 調整參數並觀察結果
 -------
@@ -58,9 +59,45 @@ https://medium.com/jimmyfu87/cnn實作kaggle貓狗影像辨識-pytorch-26380b357
 儲存第一個 model，訓練結果非常不樂觀，想必是硬體太差。
 
 以下是訓練第一變與第十變的結果(每一遍的 epoch 為 6)
-
 ![image](https://github.com/efef31016/learndDLearning/blob/master/0.png)
 ![image](https://github.com/efef31016/learndDLearning/blob/master/9.png)
-
 我取的資料集分常單純，與 https://reurl.cc/j5qzL2 一樣，所以覺得先不用在這一次
 做真正的"改變參數"的動作，但是有一點值得觀察的是，跑到第四次出現了的非常巨大改變。
+
+9月
+-------
+正式拿 Kaggle 的 25000 筆資料(訓練集)與 25000 資料(測試集)調整參數訓練並觀察結果。
+以下為跑神經網路的相關硬體及參數資訊(溫馨提醒:別用文書電腦跑神經網路...):
+
+訓練主要硬體:
+CPU:intel(R) Pentium(R) CPU G3220 @ 3.00Hz (2 CPUs), ~3.0GHz
+
+(model_1總共跑了13小時左右)
+(model_2總共跑了30小時左右)
+(model_3總共跑了15小時左右)
+
+datasets train:70%   validate:30%
+CNN
+batch_size=8
+n_epoch=16
+
+model1: criterior=CEL(CrossEntropyLoss)
+	opt=Adam
+	learning_rate=0.0001
+	
+model2: criterior=CEL
+	opt=SGD (momentum=0.9)
+	learning_rate=0.0001
+
+model3:criterior=CEL
+	opt=SGD(no momentum)
+	learning_rate=0.001(bigger than other two models)
+
+以下為各自跑出的訓練集和驗證集和測試集準確率:
+![image](https://github.com/efef31016/learndDLearning/blob/master/ok_1.png)
+![image](https://github.com/efef31016/learndDLearning/blob/master/ok_2.png)
+![image](https://github.com/efef31016/learndDLearning/blob/master/ok_3.png)
+以下為更各個模型精確的準確率(最後一次):
+![image](https://github.com/efef31016/learndDLearning/blob/master/result_comparison.png)
+以下附上我的程式碼大剛:
+![image](https://github.com/efef31016/learndDLearning/blob/master/key_steps.png)

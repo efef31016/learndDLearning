@@ -1,5 +1,4 @@
-# !練習!內文無數學!心得整理!
-# Movie_comment(datasets from keras)  cat_dog_classification with Pytorch(datasets from Kaggle)
+# cat_dog_classification with Pytorch(datasets from Kaggle)
 
 心得
 -------
